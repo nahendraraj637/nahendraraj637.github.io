@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* General Styles */
+* { box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; margin: 0; }
+
+/* Navigation Bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+li a:active {
+  background-color: #04AA6D;
+}
+
+/* Slideshow Container */
+.slideshow-container, .product-slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Slides */
+.mySlides, .product-slide {
+  display: none;
+}
+
+/* Images */
+.slideshow-container img, .product-slideshow-container img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Caption Text */
+.text {
+  color: #f2f2f2;
+  font-size: 16px; /* Larger font size for better readability */
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+}
+
+/* Navigation Buttons */
+.prev, .next, .product-slideshow-container .prev, .product-slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px; /* Larger font size for buttons */
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover, .product-slideshow-container .prev:hover, .product-slideshow-container .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Product Specific Styles */
+.product-slide img {
+  height: 400px; /* Adjust height as needed */
+  object-fit: cover;
+}
+
+/* Product Details */
+.product-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px; /* Larger font size for the title */
+  margin-bottom: 20px;
+}
+
+.product-item h4 {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-item p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+}
+
+/* About Section Styles */
+.about-us {
+  font-family: 'Arial', sans-serif;
+  font-size: 28px; /* Larger font size for the title */
+  font-weight: bold; /* Make text bold */
+  color: black; /* Set text color to black */
+  margin: 20px auto;
+  text-align: center;
+}
+
+.about-description {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px; /* Larger font size for the description */
+  font-weight: bold; /* Make text bold */
+  color: black; /* Set text color to black */
+  margin: 0 auto;
+  max-width: 800px; /* Adjust max-width as needed */
+  text-align: center; /* Center align the text */
+}
+
+/* Container for Forms */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Social Media Buttons */
+.social-media img {
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+<body>
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#product">Product</a></li>
+  <li><a href="#contact-details">Contact</a></li>
+</ul>
+
+<!-- Main Slideshow -->
+<div id="home" class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="sea_Air_freight.jpg" style="width:100%; height:489px">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img_1.jpg" style="width:100%; height:489px">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img_2.jpg" style="width:100%; height:489px">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<!-- About Section -->
+<div id="about" style="text-align:center">
+  <h3 class="about-us">ABOUT THE COMPANY</h3>
+  <p class="about-description">
+    We, WildCat Groups, are a recognized name in the industry for trading goods in and around the country. Our company has a strong base in Coimbatore Tamil Nadu, and we have been offering our services for many years. Our team consists of a well-experienced and trained staff, supported by fully computerized documentation with the latest communication equipment. Our employees are specially trained to understand every single client's requirement, enabling us to import/export services as desired...
+  </p>
+</div>
+
+<!-- Products Section with Product Slideshow -->
+<div id="product" style="text-align:center; padding: 20px;">
+  <h3 class="product-title">Our Products</h3>
+  
+  <!-- Product Image Slideshow -->
+  <div class="product-slideshow-container">
+    <div class="product-slide fade">
+      <img src="co.jpeg" style="width:100%; height:489px">
+      <div class="text">Tendar Cocanut</div>
+    </div>
+
+    <div class="product-slide fade">
+      <img src="cocanut.jpeg" style="width:100%; height:489px">
+      <div class="text">Husked Cocanut</div>
+    </div>
+
+    <div class="product-slide fade">
+      <img src="tea.jpeg" style="width:100%; height:489px">
+      <div class="text">Ooty Chaii</div>
+    </div>
+
+    <div class="product-slide fade">
+      <img src="es.jpeg" style="width:100%; height:489px">
+      <div class="text">Munnar chaii</div>
+    </div>
+
+    <a class="prev" onclick="plusProductSlides(-1)">❮</a>
+    <a class="next" onclick="plusProductSlides(1)">❯</a>
+  </div>
+  
+  <!-- Product Details -->
+  <div class="product-list">
+    <div class="product-item">
+      <h4>Coconut</h4>
+      <p>We provide high-quality coconuts sourced from the best farms. Our coconuts are known for their freshness and rich taste.</p>
+    </div>
+    <div class="product-item">
+      <h4>Tea Varieties</h4>
+      <p>Explore our wide range of tea varieties including black tea, green tea, herbal tea, and more. Each variety is carefully selected to ensure the best flavor and quality.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Details Section -->
+<div id="contact-details" class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+  </div>
+  <div class="row">
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <!-- Address Details -->
+  <div class="address-details" style="text-align:center; margin-top: 20px;">
+    <h3>Address</h3>
+    <p>1234 Company St,<br>Coimbatore, Tamil Nadu, India</p>
+  </div>
+  
+  <!-- Social Media Buttons -->
+  <div class="social-media" style="text-align:center; margin-top: 20px;">
+    <h3>Follow Us</h3>
+    <a href="https://www.facebook.com/YourPage" target="_blank">
+      <img src="Facebook_icon_2013.svg.png" alt="Facebook" style="width: 40px; height: 40px; margin: 0 10px;">
+    </a>
+    <a href="https://twitter.com/YourProfile" target="_blank">
+      <img src="twitter_x_new_logo_square_x_icon_256075.png" alt="Twitter" style="width: 40px; height: 40px; margin: 0 10px;">
+    </a>
+    <a href="https://www.instagram.com/YourProfile" target="_blank">
+      <img src="Instagram_icon.png.webp" alt="Instagram" style="width: 40px; height: 40px; margin: 0 10px;">
+    </a>
+  </div>
+</div>
+
+<script>
+// Slideshow Functionality
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("mySlides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 2000); // Change slide every 2 seconds
+}
+
+let productSlideIndex = 0;
+showProductSlides();
+
+function showProductSlides() {
+  let productSlides = document.getElementsByClassName("product-slide");
+  for (let i = 0; i < productSlides.length; i++) {
+    productSlides[i].style.display = "none";  
+  }
+  productSlideIndex++;
+  if (productSlideIndex > productSlides.length) {productSlideIndex = 1}    
+  productSlides[productSlideIndex-1].style.display = "block";  
+  setTimeout(showProductSlides, 2000); // Change slide every 2 seconds
+}
+
+// Next/Previous buttons for slides
+function plusSlides(n) {
+  clearTimeout(slideTimeout);
+  let slides = document.getElementsByClassName("mySlides");
+  slideIndex += n;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  if (slideIndex < 1) {slideIndex = slides.length}
+  showSlides();
+}
+
+function plusProductSlides(n) {
+  clearTimeout(productSlideTimeout);
+  let productSlides = document.getElementsByClassName("product-slide");
+  productSlideIndex += n;
+  if (productSlideIndex > productSlides.length) {productSlideIndex = 1}
+  if (productSlideIndex < 1) {productSlideIndex = productSlides.length}
+  showProductSlides();
+}
+</script>
+</body>
+</html>
